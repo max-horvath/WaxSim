@@ -12,6 +12,7 @@ int main(int argc, char *argv[]) {
     signal(SIGQUIT, resetSignal);
     
     int c;
+    int timeout = 30;
     char *sdk = nil;
 	char *family = nil;
     char *appPath = nil;
@@ -21,7 +22,7 @@ int main(int argc, char *argv[]) {
 	NSString *environment_variable;
 	NSArray *environment_variable_parts;
     
-    while ((c = getopt(argc, argv, "e:s:f:v:ah")) != -1) {
+    while ((c = getopt(argc, argv, "e:s:f:v:ah:t")) != -1) {
         switch(c) {
 			case 'e':
 				environment_variable = [NSString stringWithCString:optarg encoding:NSUTF8StringEncoding];
@@ -58,6 +59,9 @@ int main(int argc, char *argv[]) {
                 }
                 return 1;
                 break;
+            case 't':
+                timeout = atoi(optarg);
+                break;
             default:
                 abort ();
         }
@@ -84,7 +88,7 @@ int main(int argc, char *argv[]) {
     NSString *appPathString = [NSString stringWithUTF8String:appPath];
     NSString *videoPathString = videoPath ? [NSString stringWithUTF8String:videoPath] : nil;
 
-    Simulator *simulator = [[Simulator alloc] initWithAppPath:appPathString sdk:sdkString family:familyString video:videoPathString env:environment args:additionalArgs];
+    Simulator *simulator = [[Simulator alloc] initWithAppPath:appPathString sdk:sdkString family:familyString video:videoPathString env:environment timeout:timeout args:additionalArgs];
     [simulator launch];
 
     [[NSRunLoop mainRunLoop] run];
