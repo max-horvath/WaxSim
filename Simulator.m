@@ -19,7 +19,7 @@
 
 @synthesize session=_session;
 
-- (id)initWithAppPath:(NSString *)appPath sdk:(NSString *)sdk family:(NSString *)family video:(NSString *)videoPath env:(NSDictionary *)env args:(NSArray *)args;
+- (id)initWithAppPath:(NSString *)appPath sdk:(NSString *)sdk family:(NSString *)family video:(NSString *)videoPath env:(NSDictionary *)env timeout:(NSInteger)timeout args:(NSArray *)args;
 {
     self = [super init];
 
@@ -59,6 +59,7 @@
 	_env = [env retain];
 	_args = [args retain];
     _videoPath = [videoPath retain];
+    _timeout = timeout;
 
     return self;
 }
@@ -104,7 +105,7 @@
     [_session setDelegate:self];
     
     NSError *error;
-    if (![_session requestStartWithConfig:config timeout:30 error:&error]) {
+    if (![_session requestStartWithConfig:config timeout:_timeout error:&error]) {
         WaxLog(@"Could not start simulator session: %@", [error localizedDescription]);
         return EXIT_FAILURE;
     }

@@ -22,13 +22,14 @@
     CGWindowID _windowID;
     QTMovie *_movie;
     NSTimeInterval _lastInterval;
+    NSInteger _timeout;
 }
 
 @property (nonatomic, readonly) DTiPhoneSimulatorSession* session;
 
 + (NSArray *)availableSDKs;
 
-- (id)initWithAppPath:(NSString *)appPath sdk:(NSString *)sdk family:(NSString *)family video:(NSString *)videoPath env:(NSDictionary *)env args:(NSArray *)args;
+- (id)initWithAppPath:(NSString *)appPath sdk:(NSString *)sdk family:(NSString *)family video:(NSString *)videoPath env:(NSDictionary *)env timeout:(NSInteger)timeout args:(NSArray *)args;
 - (int)launch;
 - (void)addScreenshotToMovie;
 - (void)end;
