@@ -7,7 +7,6 @@
 //
 
 #import "Simulator.h"
-#import <QTKit/QTKit.h>
 
 #include <sys/param.h>
 #include <objc/runtime.h>

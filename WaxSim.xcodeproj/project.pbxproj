@@ -58,7 +58,6 @@
 		08FB7794FE84155DC02AAC07 /* WaxSim */ = {
 			isa = PBXGroup;
 			children = (
-				A8BC32E3139825EA00BDDB2A /* QTKit.framework */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
@@ -69,11 +68,11 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				32A70AAB03705E1F00C91783 /* WaxSim_Prefix.pch */,
-				08FB7796FE84155DC02AAC07 /* WaxSim.m */,
+				048275AF112639B7003DFACB /* iPhoneSimulatorRemoteClient.h */,
 				048275B0112639B7003DFACB /* Simulator.h */,
 				048275B1112639B7003DFACB /* Simulator.m */,
-				048275AF112639B7003DFACB /* iPhoneSimulatorRemoteClient.h */,
+				08FB7796FE84155DC02AAC07 /* WaxSim.m */,
+				32A70AAB03705E1F00C91783 /* WaxSim_Prefix.pch */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -81,9 +80,10 @@
 		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				048275BF11263A74003DFACB /* iPhoneSimulatorRemoteClient.framework */,
 				048274F01126398C003DFACB /* AppKit.framework */,
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+				048275BF11263A74003DFACB /* iPhoneSimulatorRemoteClient.framework */,
+				A8BC32E3139825EA00BDDB2A /* QTKit.framework */,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -204,8 +204,8 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -216,8 +216,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
