@@ -1,5 +1,5 @@
 # Build tools
-XCODE-PATH=/Applications/Xcode45-DP4.app
+XCODE-PATH=/Applications/Xcode.app
 TOOLS-PATH=/Contents/Developer/usr/bin/xcodebuild
 DERIVED-DATA-PATH=~/Library/Developer/Xcode/DerivedData
 XCODEBUILD=$(XCODE-PATH)$(TOOLS-PATH)
